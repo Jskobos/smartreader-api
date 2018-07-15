@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+  db:
+    container_name: smartreader-db
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_USER: ${PG_USER}
+    volumes:
+         - pgdata:/var/lib/postgresql/data
+         - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:
