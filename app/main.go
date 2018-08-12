@@ -60,7 +60,7 @@ func main() {
 	r.HandleFunc("/text/{id}", GetText).Methods("POST")
 	r.HandleFunc("/text/{id}", UpdateText).Methods("PUT")
 	r.HandleFunc("/text/{id}", DeleteText).Methods("DELETE")
-	if err := http.ListenAndServe(":3000", r); err != nil {
+	if err := http.ListenAndServe(":5000", r); err != nil {
 		log.Fatal(err)
 	}
 }
