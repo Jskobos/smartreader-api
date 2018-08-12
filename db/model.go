@@ -31,8 +31,8 @@ func BuildSchema() {
 	db.MustExec(schema)
 
 	tx := db.MustBegin()
-	tx.MustExec("INSERT INTO reading (title, text) VALUES ($1, $2)", "Mary", "Mary had a little lamb")
-	tx.MustExec("INSERT INTO reading (title, text) VALUES ($1, $2)", "LOTR", "In a hole in the ground there lived a hobbit.")
+	tx.MustExec("INSERT INTO readings (title, text) VALUES ($1, $2)", "Mary", "Mary had a little lamb")
+	tx.MustExec("INSERT INTO readings (title, text) VALUES ($1, $2)", "LOTR", "In a hole in the ground there lived a hobbit.")
 	tx.Commit()
 
 	readings := []Reading{}

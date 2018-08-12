@@ -32,7 +32,7 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 // GetAllTexts : Returns a list of all reading texts in the database.
 func GetAllTexts(w http.ResponseWriter, r *http.Request) {
 	db.BuildSchema()
-	// fmt.Fprintln(w, "not implemented yet !")
+	fmt.Fprintln(w, "we have arrived")
 }
 
 // GetText : Retrieve a Text object by id.
