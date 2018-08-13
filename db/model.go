@@ -10,7 +10,7 @@ import (
 )
 
 var schema = `
-CREATE TABLE reading (
+CREATE TABLE readings (
     title text,
     text text 
 );`
@@ -34,7 +34,7 @@ func BuildSchema() {
 	tx.MustExec("INSERT INTO readings (title, text) VALUES ($1, $2)", "Mary", "Mary had a little lamb")
 	tx.MustExec("INSERT INTO readings (title, text) VALUES ($1, $2)", "LOTR", "In a hole in the ground there lived a hobbit.")
 	tx.Commit()
-
+	fmt.Println("w", "still hasn't crashed")
 	readings := []Reading{}
 	db.Select(&readings, "SELECT * FROM reading ORDER BY title ASC")
 	jason, john := readings[0], readings[1]
