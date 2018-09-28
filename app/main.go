@@ -51,6 +51,7 @@ func DeleteText(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	fmt.Println("Starting server...")
 	r := mux.NewRouter()
 	r.HandleFunc("/user", GetAllUsers).Methods("GET")
 	r.HandleFunc("/user/{id}", GetUser).Methods("POST")
